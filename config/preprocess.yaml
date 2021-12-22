@@ -1,0 +1,21 @@
+path:
+  raw_path: "/data"
+  preprocessed_path: "/preprocessed"
+  temp_dir: "/temp_dir"
+  visualization_path: "/visualization"
+
+preprocessing:
+  val_size: 512
+  split_win_size: 610
+  split_stride_size: 32
+  audio:
+    sampling_rate: 16000
+    max_wav_value: 32767.0
+  stft:
+    filter_length: 1024
+    hop_length: 256
+    win_length: 1024
+  mel:
+    n_mel_channels: 80
+    mel_fmin: 0
+    mel_fmax: 8000

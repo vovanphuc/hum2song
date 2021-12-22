@@ -1,0 +1,8 @@
+pygobject # conda install -c conda-forge ffmpeg
+librosa==0.8.0
+numpy
+torch
+pydub
+faiss-gpu
+torchaudio >= 0.7
+WavAugment
