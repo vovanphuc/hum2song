@@ -8,15 +8,15 @@
 
 ## Chuẩn bị dữ liệu cho quá trình train:
 
-    - Sửa các file đường dẫn trong config/preprocess.yaml
+- Sửa các file đường dẫn trong config/preprocess.yaml
    
-        + raw_path: đường dẫn đến data thô
+  + raw_path: đường dẫn đến data thô
       
-        + preprocessed_path: đường dẫn đầu ra của quá trình rút trích mel
+  + preprocessed_path: đường dẫn đầu ra của quá trình rút trích mel
       
-        + temp_dir: đường dẫn chứa dữ liệu mp3 được chuẩn hóa
+  + temp_dir: đường dẫn chứa dữ liệu mp3 được chuẩn hóa
       
-    - Chạy lần lượt các lệnh sau:
+  - Chạy lần lượt các lệnh sau:
 
 ```   
         python preprocessing.py
@@ -27,39 +27,39 @@
    
         python utils/preprocess_augment.py
    ```
-##Train model:
+## Train model:
+- Sửa các file đường dẫn trong config/config.py
+   
+  + meta_train: đường dẫn đến file train_meta.csv trong preprocessed_path
+      
+  + train_root: đường dẫn đến dữ liệu mel đã tiền xử lý
+      
+  + train_list = 'full_data_train.txt'
+      
+  + val_list = 'full_data_val.txt'
+      
+- Chạy lần lượt các lệnh sau:
 
-    - Sửa các file đường dẫn trong config/config.py
-   
-        + meta_train: đường dẫn đến file train_meta.csv trong preprocessed_path
-      
-        + train_root: đường dẫn đến dữ liệu mel đã tiền xử lý
-      
-        + train_list = 'full_data_train.txt'
-      
-        + val_list = 'full_data_val.txt'
-      
-    - Chạy lần lượt các lệnh sau:
-```   
+```    
         python convert_data.py
-   
+
         python train.py
-   ```
+```
 ## Infer public test:
 
-    - Đặt dữ liệu mp3 thô ở địa chỉ /data/public_test (bên trong chứa 2 thư mục full_song và hum)
+- Đặt dữ liệu mp3 thô ở địa chỉ /data/public_test (bên trong chứa 2 thư mục full_song và hum)
    
-    - Chạy lần lượt các lệnh sau: 
+- Chạy lần lượt các lệnh sau: 
     
-   ```/model/predict.sh```
+   ```./predict.sh```
 
 ## Infer private test:
 
-    Đặt dữ liệu mp3 thô ở địa chỉ /data/private_test (bên trong chứa 2 thư mục full_song và hum)
+   Đặt dữ liệu mp3 thô ở địa chỉ /data/private_test (bên trong chứa 2 thư mục full_song và hum)
    
-    Chạy lần lượt các lệnh sau:
-
-   ```/model/predict_private_test.sh```
+   Chạy lần lượt các lệnh sau:
+   
+   ```./predict_private_test.sh```
 
 ## Team:
    [Võ Văn Phúc](https://github.com/vovanphuc)
