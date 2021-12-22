@@ -105,7 +105,7 @@ if __name__ == '__main__':
             save_model(model, opt.checkpoints_path, opt.backbone, 'latest')
             model.eval()
             data_val = read_val(opt.val_list, opt.train_root)
-            mrr = mrr_score(model, data_val)
+            mrr = mrr_score(model, data_val, opt.input_shape)
             print(f'epoch {i}: MRR= {mrr}')
             if mrr > mrr_best:
                 mrr_best = mrr
